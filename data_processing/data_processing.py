@@ -10,7 +10,9 @@ def load_and_preprocess_data(dataset_dir, image_size, batch_size):
         shear_range=0.2,
         zoom_range=0.2,
         horizontal_flip=True,
-        validation_split=0.2
+        validation_split=0.2,
+        brightness_range=[0.8, 1.2],  # Adjust brightness
+        channel_shift_range=10,  # Random channel shifts
     )
 
     train_generator = train_datagen.flow_from_directory(
